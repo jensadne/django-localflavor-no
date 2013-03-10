@@ -1,5 +1,5 @@
 # This file is distributed under the same license as the Django package.
-# 
+#
 # Translators:
 # Jannis Leidel <jannis@leidel.info>, 2011.
 #   <jonklo@gmail.com>, 2012.
@@ -9,15 +9,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: django-localflavor-no\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-12-20 16:37-0500\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: sigurdga <sigurdga-transifex@sigurdga.no>\n"
+"POT-Creation-Date: 2013-03-10 15:36+0100\n"
+"PO-Revision-Date: 2013-03-10 15:37+0100\n"
+"Last-Translator: Rolf Erik Lekang <me@rolflekang.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: \n"
-"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 1.5.4\n"
 
 #: forms.py:19
 msgid "Enter a zip code in the format XXXX."
@@ -26,3 +26,7 @@ msgstr "Oppgi et postnummer på formen XXXX."
 #: forms.py:39
 msgid "Enter a valid Norwegian social security number."
 msgstr "Oppgi et gyldig norsk personnummer."
+
+#: forms.py:95
+msgid "A phone number must be 8 digits and may have country code"
+msgstr "Et telefonnummer må ha 8 siffer og eventuelt landkode"
