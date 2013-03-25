@@ -16,6 +16,9 @@ What's in the Norway localflavor?
 * forms.NOMunicipalitySelect: A ``Select`` widget that uses a list of Norwegian
   municipalities (fylker) as its choices.
 
+* forms.NOPhoneNumberField:  Field with phonenumber validation. Requires a phone number with
+    8 digits and optional country code
+
 .. _personnummer: http://no.wikipedia.org/wiki/Personnummer
 
 See the source code for full details.

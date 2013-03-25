@@ -3,6 +3,8 @@ from setuptools import setup
 
 README = open(os.path.join(os.path.dirname(__file__), 'README.rst')).read()
 
+os.environ['DJANGO_SETTINGS_MODULE'] = 'django_localflavor_no.tests.settings'
+
 setup(
     name = 'django-localflavor-no',
     version = '1.0',
@@ -25,5 +27,6 @@ setup(
     ],
     install_requires=[
         'Django>=1.4',
-    ]
+    ],
+    test_suite='test_runner.runtests',
 )
