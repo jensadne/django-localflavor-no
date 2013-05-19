@@ -1,7 +1,7 @@
 # -*- coding: utf8 -*-
 from django.test import SimpleTestCase
 from django.utils.translation import ugettext_lazy as _, override
-from django_localflavor_no.forms import NOPhoneNumberField, NOSocialSecurityNumber, NOZipCodeField, NOMunicipalitySelect
+from django_localflavor_no.forms import NOPhoneNumberField, NOSocialSecurityNumber, NOZipCodeField, NOCountySelect
 
 
 class NOLocalFlavorTests(SimpleTestCase):
@@ -52,10 +52,10 @@ class NOLocalFlavorTests(SimpleTestCase):
         }
         self.assertFieldOutput(NOSocialSecurityNumber, valid, invalid)
 
-    def test_NOMunicipalitySelect(self):
+    def test_NOCountySelect(self):
         with override('en'):
-            f = NOMunicipalitySelect()
-            out = '''<select name="municipalities">
+            f = NOCountySelect()
+            out = '''<select name="counties">
     <option value="akershus" selected="selected">Akershus</option>
     <option value="austagder">Aust-Agder</option>
     <option value="buskerud">Buskerud</option>
@@ -78,4 +78,4 @@ class NOLocalFlavorTests(SimpleTestCase):
     <option value="vestfold">Vestfold</option>
     <option value="ostfold">Østfold</option>
 </select>'''
-        self.assertHTMLEqual(f.render('municipalities', 'akershus'), out)
+        self.assertHTMLEqual(f.render('counties', 'akershus'), out)

@@ -11,3 +11,5 @@ INSTALLED_APPS = (
     'django_localflavor_no',
     'django_localflavor_no.tests',
 )
+
+SECRET_KEY = '!'

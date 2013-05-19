@@ -1,17 +1,14 @@
 # -*- coding: utf-8 -*-
 """
-An alphabetical list of Norwegian municipalities (fylker) fro use as `choices`
-in a formfield.
+An alphabetical list of Norwegian counties (fylker) for use as `choices` in a
+formfield.
 
-This exists in this standalone file so that it's on ly imported into memory
-when explicitly needed.
+This exists in this standalone file so that it's only imported into memory when
+explicitly needed.
 """
 from __future__ import unicode_literals
 
-import warnings
-warnings.warn("django_localflavor_no.no_municipalities.MUNICIPALITY_CHOICES is deprecated. Use django_localflavor_no.no_counties.COUNTY_CHOICES instead.", DeprecationWarning)
-
-MUNICIPALITY_CHOICES = (
+COUNTY_CHOICES = (
     ('akershus', 'Akershus'),
     ('austagder', 'Aust-Agder'),
     ('buskerud', 'Buskerud'),

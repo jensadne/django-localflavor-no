@@ -6,12 +6,15 @@ from __future__ import absolute_import, unicode_literals
 
 import re
 import datetime
+import warnings
 
-from django.contrib.localflavor.no.no_municipalities import MUNICIPALITY_CHOICES
 from django.core.validators import EMPTY_VALUES
 from django.forms import ValidationError
 from django.forms.fields import Field, RegexField, Select
 from django.utils.translation import ugettext_lazy as _
+
+from .no_counties import COUNTY_CHOICES
+MUNICIPALITY_CHOICES = COUNTY_CHOICES
 
 
 class NOZipCodeField(RegexField):
@@ -23,13 +26,25 @@ class NOZipCodeField(RegexField):
         super(NOZipCodeField, self).__init__(r'^\d{4}$',
             max_length, min_length, *args, **kwargs)
 
+
+class NOCountySelect(Select):
+    """
+    A Select widget that uses a list of Norwegian municipalities (fylker)
+    as its choices.
+    """
+    def __init__(self, attrs=None):
+        super(NOCountySelect, self).__init__(attrs, choices=COUNTY_CHOICES)
+
+
 class NOMunicipalitySelect(Select):
     """
     A Select widget that uses a list of Norwegian municipalities (fylker)
     as its choices.
     """
     def __init__(self, attrs=None):
+        warnings.warn("NOMunicipalitySelect is deprecated. Use NOCountySelect instead.", DeprecationWarning)
         super(NOMunicipalitySelect, self).__init__(attrs, choices=MUNICIPALITY_CHOICES)
+
 
 class NOSocialSecurityNumber(Field):
     """
